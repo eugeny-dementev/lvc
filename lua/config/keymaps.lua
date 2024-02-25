@@ -24,6 +24,8 @@ vim.keymap.del('n', '[q')
 vim.keymap.del({ 'n', 'i', 'v' }, '<A-j>')
 vim.keymap.del({ 'n', 'i', 'v' }, '<A-k>')
 
+-- Delete save schortcut
+vim.keymap.del({ 'n', 'i', 'v' }, '<C-s>');
 
 
 
@@ -46,5 +48,12 @@ vim.keymap.set('n', '<leader>qe', '<cmd>copen<CR>')
 -- nmap <C-c> :let @/=""<CR>
 vim.keymap.set('n', '<C-c>', '<cmd>let @/=""<CR>')
 
+local harpoon = require('harpoon');
 
+vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = 'Append window to harpoon' })
+vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
+vim.keymap.set("n", "<leader>ha", function() harpoon:list():select(1) end, { desc = 'Harpoon goto 1 buffer' })
+vim.keymap.set("n", "<leader>hs", function() harpoon:list():select(2) end, { desc = 'Harpoon goto 2 buffer' })
+vim.keymap.set("n", "<leader>hd", function() harpoon:list():select(3) end, { desc = 'Harpoon goto 3 buffer' })
+vim.keymap.set("n", "<leader>hf", function() harpoon:list():select(4) end, { desc = 'Harpoon goto 4 buffer' })
