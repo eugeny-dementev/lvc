@@ -25,7 +25,7 @@ vim.keymap.del({ 'n', 'i', 'v' }, '<A-j>')
 vim.keymap.del({ 'n', 'i', 'v' }, '<A-k>')
 
 -- Delete save schortcut
-vim.keymap.del({ 'n', 'i', 'v' }, '<C-s>');
+vim.keymap.del({ 'x', 'n', 'i', 's' }, '<C-s>');
 
 
 
