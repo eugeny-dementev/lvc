@@ -3,10 +3,10 @@
 -- Add any additional keymaps here
 
 -- Disable default mappng for window splits moves. <C-w>h/j/k/l to simple <C-h/j/k/l>
--- vim.keymap.del("n", "<C-h>")
--- vim.keymap.del("n", "<C-j>")
--- vim.keymap.del("n", "<C-k>")
--- vim.keymap.del("n", "<C-l>")
+vim.keymap.del("n", "<C-h>")
+vim.keymap.del("n", "<C-j>")
+vim.keymap.del("n", "<C-k>")
+vim.keymap.del("n", "<C-l>")
 
 -- Cleanup LazyVim window resizing key mappings
 vim.keymap.del('n', '<C-Up>')
@@ -53,7 +53,7 @@ local harpoon = require('harpoon');
 vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = 'Append window to harpoon' })
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-vim.keymap.set("n", "<leader>ha", function() harpoon:list():select(1) end, { desc = 'Harpoon goto 1 buffer' })
-vim.keymap.set("n", "<leader>hs", function() harpoon:list():select(2) end, { desc = 'Harpoon goto 2 buffer' })
-vim.keymap.set("n", "<leader>hd", function() harpoon:list():select(3) end, { desc = 'Harpoon goto 3 buffer' })
-vim.keymap.set("n", "<leader>hf", function() harpoon:list():select(4) end, { desc = 'Harpoon goto 4 buffer' })
+vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end, { desc = 'Harpoon goto 1 buffer' })
+vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end, { desc = 'Harpoon goto 2 buffer' })
+vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end, { desc = 'Harpoon goto 3 buffer' })
+vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end, { desc = 'Harpoon goto 4 buffer' })
