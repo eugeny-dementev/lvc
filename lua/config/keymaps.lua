@@ -48,6 +48,8 @@ vim.keymap.set('n', '<leader>qe', '<cmd>copen<CR>')
 -- nmap <C-c> :let @/=""<CR>
 vim.keymap.set('n', '<C-c>', '<cmd>let @/=""<CR>')
 
+
+-- harpoon 2 setup
 local harpoon = require('harpoon');
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = 'Append window to harpoon' })
@@ -57,3 +59,8 @@ vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end, { desc = '
 vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end, { desc = 'Harpoon goto 2 buffer' })
 vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end, { desc = 'Harpoon goto 3 buffer' })
 vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end, { desc = 'Harpoon goto 4 buffer' })
+
+
+-- Open :Ex
+vim.keymap.set("n", "<leader>e", "<cmd>Ex<CR>")
+
