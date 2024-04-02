@@ -122,6 +122,16 @@ return {
     dependencies = {
       "haydenmeade/neotest-jest",
     },
+    keys = {
+      { "<leader>tt", function()
+        local fullPath = vim.fs.normalize(vim.fn.expand("%"));
+        local cwd = vim.fs.normalize(vim.fn.getcwd()) .. '/';
+
+        local pattern = vim.fn.substitute(fullPath, cwd, '', 'g');
+
+        require("neotest").run.run(pattern)
+      end, desc = "Run File" },
+    },
     opts = function (_, opts)
       table.insert(
         opts.adapters,
