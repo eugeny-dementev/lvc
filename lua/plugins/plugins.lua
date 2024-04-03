@@ -120,7 +120,8 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
-      "haydenmeade/neotest-jest",
+      "eugeny-dementev/neotest-jest",
+      branch = "fix/path-normalize",
     },
     keys = {
       { "<leader>tt", function()
