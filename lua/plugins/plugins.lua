@@ -58,11 +58,11 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    config = function ()
-      local harpoon = require('harpoon');
+    config = function()
+      local harpoon = require("harpoon")
 
-      harpoon:setup({});
-    end
+      harpoon:setup({})
+    end,
   },
 
   -- Use <tab> for completion and snippets (supertab)
@@ -122,14 +122,14 @@ return {
     dependencies = {
       "haydenmeade/neotest-jest",
     },
-    opts = function (_, opts)
+    opts = function(_, opts)
       table.insert(
         opts.adapters,
         require("neotest-jest")({
           jestCommand = "npm test --",
-          jestConfigFile = 'jest.config.js',
+          jestConfigFile = "jest.config.js",
           env = { CI = true },
-          cwd = function ()
+          cwd = function()
             return vim.fn.getcwd()
           end,
         })
@@ -137,5 +137,3 @@ return {
     end,
   },
 }
-
-
