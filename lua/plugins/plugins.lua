@@ -1,3 +1,10 @@
+local js_languages = {
+  "javascript",
+  "typescript",
+  "javascriptreact",
+  "typescriptreact",
+}
+
 return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
@@ -183,6 +190,28 @@ return {
       show_model = false, -- Displays which model you are using at the beginning of your chat session.
       no_auto_close = false, -- Never closes the window automatically.
       debug = false, -- Prints errors and the command which is run.
+    },
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+    keys = {
+      {
+        "<leader>da",
+        function()
+          local dap_vscode = require("dap.ext.vscode")
+
+          if vim.fn.filereadable(".vscode/launch.json") then
+            dap_vscode.load_launchjs(nil, {
+              ["pwa-node"] = js_languages,
+              ["node"] = js_languages,
+            })
+
+            require("dap").continue()
+          end
+        end,
+        desc = "Run with Args",
+      },
     },
   },
 }
