@@ -64,3 +64,5 @@ vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end, { desc = '
 -- Open :Ex
 vim.keymap.set("n", "<leader>e", "<cmd>Ex<CR>")
 
+-- Type Definition
+vim.keymap.set("n", "<leader>ci", vim.lsp.buf.hover, { desc = "Infer type" });
