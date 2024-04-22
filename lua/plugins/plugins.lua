@@ -214,4 +214,5 @@ return {
       },
     },
   },
+  'prisma/vim-prisma',
 }
