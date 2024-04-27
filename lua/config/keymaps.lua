@@ -52,7 +52,7 @@ vim.keymap.set('n', '<C-c>', '<cmd>let @/=""<CR>')
 -- harpoon 2 setup
 local harpoon = require('harpoon');
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = 'Append window to harpoon' })
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = 'Add buffer to harpoon' })
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end, { desc = 'Harpoon goto 1 buffer' })
