@@ -214,5 +214,11 @@ return {
       },
     },
   },
-  'prisma/vim-prisma',
+  "prisma/vim-prisma",
+  {
+    "hat0uma/csvview.nvim",
+    config = function()
+      require("csvview").setup()
+    end,
+  },
 }
