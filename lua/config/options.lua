@@ -3,3 +3,5 @@
 -- Add any additional options here
 vim.g.autoformat = false
 vim.opt.swapfile = false
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
