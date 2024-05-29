@@ -160,7 +160,7 @@ return {
       table.insert(
         opts.adapters,
         require("neotest-mocha")({
-          command = "npm run test:one --",
+          command = "npm run test:hook --",
           command_args = function(context)
             -- The context contains:
             --   results_path: The file that json results are written to
