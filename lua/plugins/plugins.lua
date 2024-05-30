@@ -67,6 +67,7 @@ return {
       {
         "<leader>pwf",
         function()
+          local utils = require("telescope.utils")
           require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })
         end,
         desc = "Telescope grep word",
@@ -159,20 +160,6 @@ return {
       "eugeny-dementev/neotest-jest",
       branch = "fix/path-normalize",
       "adrigzr/neotest-mocha",
-    },
-    keys = {
-      {
-        "<leader>tt",
-        function()
-          local fullPath = vim.fs.normalize(vim.fn.expand("%"))
-          local cwd = vim.fs.normalize(vim.fn.getcwd()) .. "/"
-
-          local pattern = vim.fn.substitute(fullPath, cwd, "", "g")
-
-          require("neotest").run.run(pattern)
-        end,
-        desc = "Run File",
-      },
     },
     opts = function(_, opts)
       table.insert(
