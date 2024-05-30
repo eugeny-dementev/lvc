@@ -67,8 +67,6 @@ return {
       {
         "<leader>pwf",
         function()
-          local utils = require("telescope.utils")
-          print(utils)
           require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })
         end,
         desc = "Telescope grep word",
