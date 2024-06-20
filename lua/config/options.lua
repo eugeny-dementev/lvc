@@ -16,20 +16,19 @@ if vim.fn.has("win32") == 1 and vim.fn.has("ws1") == 0 then
   vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
   vim.o.shellquote = ""
   vim.o.shellxquote = ""
+end
 
-  -- General/Global LSP Configuration
-  local api = vim.api
-  local lsp = vim.lsp
+-- General/Global LSP Configuration
+local lsp = vim.lsp
 
-  local make_client_capabilities = lsp.protocol.make_client_capabilities
-  function lsp.protocol.make_client_capabilities()
-    local caps = make_client_capabilities()
-    if not (caps.workspace or {}).didChangeWatchedFiles then
-      vim.notify("lsp capability didChangeWatchedFiles is already disabled", vim.log.levels.WARN)
-    else
-      caps.workspace.didChangeWatchedFiles = nil
-    end
-
-    return caps
+local make_client_capabilities = lsp.protocol.make_client_capabilities
+function lsp.protocol.make_client_capabilities()
+  local caps = make_client_capabilities()
+  if not (caps.workspace or {}).didChangeWatchedFiles then
+    vim.notify("lsp capability didChangeWatchedFiles is already disabled", vim.log.levels.WARN)
+  else
+    caps.workspace.didChangeWatchedFiles = nil
   end
+
+  return caps
 end
