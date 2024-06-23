@@ -157,8 +157,7 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
-      "eugeny-dementev/neotest-jest",
-      branch = "fix/path-normalize",
+      { "eugeny-dementev/neotest-jest", branch = "fix/path-normalize" },
       "adrigzr/neotest-mocha",
     },
     opts = function(_, opts)
