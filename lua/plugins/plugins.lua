@@ -57,12 +57,17 @@ return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
+    defaults = {
+      preview = {
+        filesize_limit = 0.5555,
+      },
+    },
     keys = {
       {
         "<leader><leader>",
         my_find_files,
         mode = "n",
-        desc = "Toggleable file search"
+        desc = "Toggleable file search",
       },
       {
         "<leader>pwf",
