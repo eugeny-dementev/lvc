@@ -59,6 +59,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     defaults = {
       preview = {
+        -- https://github.com/nvim-telescope/telescope.nvim/issues/3032
         filesize_limit = 0.5555,
       },
     },
