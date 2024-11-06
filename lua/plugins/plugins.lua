@@ -95,6 +95,28 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      highlight = {
+        enable = true,
+        -- https://github.com/nvim-treesitter/nvim-treesitter/pull/2009/files
+        disable = function(_, bufnr) -- Disable in large buffers
+          if vim.api.nvim_buf_line_count(bufnr) > 50000 then
+            return true
+          else
+            -- Retrieve all lines from the buffer
+            local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, true)
+            -- Join all lines into a single string and count characters
+            local symbol_count = #table.concat(lines, "\n")
+            -- Disable treesitter if there is more than half million symbols in a buffer
+            return symbol_count > 500000
+          end
+        end,
+      },
+    },
+  },
+
+  {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = {
