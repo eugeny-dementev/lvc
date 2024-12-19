@@ -6,6 +6,7 @@ vim.opt.swapfile = false
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 vim.opt.spelloptions = "camel"
+vim.g.lazyvim_cmp = "nvim-cmp"
 
 if vim.fn.has("win32") == 1 and vim.fn.has("ws1") == 0 then
   vim.o.shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell"
