@@ -55,14 +55,19 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    branch = "master", -- was "0.1.x"
     dependencies = { "nvim-lua/plenary.nvim" },
-    defaults = {
-      preview = {
-        -- https://github.com/nvim-telescope/telescope.nvim/issues/3032
-        filesize_limit = 0.5555,
+
+    -- telescope reads configuration from opts (passed to require("telescope").setup(opts))
+    opts = {
+      defaults = {
+        preview = {
+          -- https://github.com/nvim-telescope/telescope.nvim/issues/3032
+          filesize_limit = 0.5555,
+        },
       },
     },
+
     keys = {
       {
         "<leader><leader>",
@@ -73,7 +78,6 @@ return {
       {
         "<leader>pwf",
         function()
-          local utils = require("telescope.utils")
           require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })
         end,
         desc = "Telescope grep word",
@@ -285,13 +289,16 @@ return {
       },
     },
   },
+
   "prisma/vim-prisma",
+
   {
     "hat0uma/csvview.nvim",
     config = function()
       require("csvview").setup()
     end,
   },
+
   {
     "kkrampis/codex.nvim",
     lazy = true,
